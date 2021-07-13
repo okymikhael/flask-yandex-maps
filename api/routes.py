@@ -11,10 +11,10 @@ client = Client("529d15e0-0ebb-4898-b7f9-4575fe7e4366")
 def address():
     if request.method == 'POST':
         req = request.json
-        print(req)
         addr1 = req['address1'] if 'address1' in req else None
         addr2 = req['address2'] if 'address2' in req else None
         result = distance_address(addr1, addr2)
+        
         return {'status': 'success', 'message': result}
 
 @api.route('/coordinate', methods=['POST'])
@@ -26,6 +26,7 @@ def coordinate():
         latitude2 = req['latitude2'] if 'latitude2' in req else None
         longitude2 = req['longitude2'] if 'longitude2' in req else None
         result = distance_coordinates(latitude1, longitude1, latitude2, longitude2)
+        
         return {'status': 'success', 'message': result}
 
 def distance_coordinates(latitude1, longitude1, latitude2, longitude2):
@@ -55,6 +56,7 @@ def distance_coordinates(latitude1, longitude1, latitude2, longitude2):
     c = 2 * atan2(sqrt(a), sqrt(1 - a))
 
     distance = R * c
+    
     return 'Distance between 4 coordinate is {0} KM'.format(distance)
 
 def distance_address(addr1, addr2):
@@ -85,4 +87,5 @@ def distance_address(addr1, addr2):
     c = 2 * atan2(sqrt(a), sqrt(1 - a))
 
     distance = R * c
+    
     return 'Distance between 2 address is {0} KM'.format(distance)
