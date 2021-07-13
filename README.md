@@ -1,7 +1,11 @@
+
 Windows needs
+- Python 3.8
 - pip install gevent --pre
 - pip install auto-py-to-exe
 - pip install yandex-geocoder
+
+![Flask Documentation](https://user-images.githubusercontent.com/22582712/125488610-4fa0390e-ba2a-4239-9100-55dedf07b300.jpg)
 
 Positive Case
 host: http://localhost:5000/api/address
