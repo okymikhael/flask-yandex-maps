@@ -1,5 +1,6 @@
 
 Windows needs
+- Python 3.8
 - pip install gevent --pre
 - pip install auto-py-to-exe
 - pip install yandex-geocoder
